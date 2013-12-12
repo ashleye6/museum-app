@@ -1,0 +1,11 @@
+<h1> Welcome to amazing Museum App </h1> 
+
+<p><%= link_to 'Add a painting', new_painting_path %></p>
+
+<%= form_tag '/search', method: :get do %>
+<%= label_tag 'q', "Search" %>
+<%= text_field_tag 'q' %>
+<%= submit_tag %>
+<% end %>
+
+<%= render 'paintings' %>

@@ -1,0 +1,25 @@
+<% if @painting.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@painting.errors.count, "error") %> prohibited
+      this post from being saved:</h2>
+    <ul>
+    <% @painting.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+  <% end %>
+
+<%= form_for @painting do |p| %>
+<%= p.label :title, "Painting Title" %><br/>
+<%= p.text_field :title %><br/>
+<%= p.label :artist_id %><br/>
+<%= collection_select(:painting, :artist_id, Artist.all, :id, :name, prompt: true) %>
+<br/>
+<%= p.label :museum_id %><br/>
+<%= collection_select(:painting, :museum_id, Museum.all, :id, :name, prompt: true) %>
+<br/>
+<%= p.label :image %><br/>
+<%= p.text_field :image %><br/>
+<%= submit_tag 'Submit' %>
+<% end %>

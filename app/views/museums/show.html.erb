@@ -1,0 +1,9 @@
+<h1> Paintings in <%= @museum.name %> </h1>
+
+<% @museum.paintings.each do |m| %>
+<b>Title: </b> <%=m.title %> <br>
+<b> Artist: </b> <%= m.artist.name %> <br>
+<%= image_tag(m.image) %> 
+<% end %>
+
+<p><%= link_to "Back to home", root_path %></p>

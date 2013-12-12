@@ -1,0 +1,6 @@
+<h1><%= @painting.title %></h1>
+<p><b>Artist:</b> <%= @painting.artist.name %></p>
+<p><b>Museum:</b> <%= @painting.museum.name %></p>
+<%= image_tag(@painting.image) %>
+
+<p><%= link_to "Edit painting", edit_painting_path(@painting) %> | <%= link_to "Back to home", root_path %></p>

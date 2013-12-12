@@ -1,0 +1,6 @@
+<% @paintings.each do |p| %>
+<h3><%= p.title %></h3>
+<p><%= link_to "View painting", painting_path(p) %></p>
+<p><b>Artist:</b> <%= link_to p.artist.name, artist_path(p.artist_id)  %></p>
+<p><b>Museum:</b> <%= link_to p.museum.name, museum_path(p.museum_id) %></p>
+<% end %>
